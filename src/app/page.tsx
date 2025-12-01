@@ -73,88 +73,10 @@ export default function Home() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="explore">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {posts.map((post) => (
-                    <PostCard key={post.id} post={post} />
-                  ))}
-                </div>
-                <aside className="lg:col-span-1 space-y-8">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Trending Tags</CardTitle>
-                      <CardDescription>
-                        Explore popular topics in the community.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex flex-wrap gap-2">
-                      {tags.map((tag) => (
-                        <Badge key={tag.id} variant="secondary">
-                          <Link href="#">{tag.name}</Link>
-                        </Badge>
-                      ))}
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Upcoming Events</CardTitle>
-                      <CardDescription>
-                        Join our upcoming webinars and workshops.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      {events.slice(0, 2).map((event) => (
-                        <div key={event.id} className="flex items-start gap-4">
-                          <div className="bg-muted text-muted-foreground rounded-md px-3 py-2 flex flex-col items-center">
-                            <span className="text-sm font-medium">
-                              {new Date(event.date).toLocaleString("en-US", {
-                                month: "short",
-                              })}
-                            </span>
-                            <span className="text-lg font-bold">
-                              {new Date(event.date).getDate()}
-                            </span>
-                          </div>
-                          <div>
-                            <h3 className="font-semibold">{event.title}</h3>
-                            <p className="text-sm text-muted-foreground">
-                              {event.type}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Featured Profiles</CardTitle>
-                      <CardDescription>
-                        Connect with researchers and students.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      {users.slice(0, 3).map((user) => (
-                        <div key={user.id} className="flex items-center gap-4">
-                          <Avatar>
-                            <AvatarImage src={user.avatarUrl} alt={user.name} />
-                            <AvatarFallback>
-                              {user.name.charAt(0)}
-                            </AvatarFallback>
-                          </Avatar>
-                          <div className="w-full">
-                            <div className="flex justify-between items-center">
-                              <h3 className="font-semibold">{user.name}</h3>
-                              <span className="text-2xl">{user.country === 'Japan' ? '🇯🇵' : '🇮🇳'}</span>
-                            </div>
-                            <p className="text-sm text-muted-foreground truncate">
-                              {user.affiliation}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </CardContent>
-                  </Card>
-                </aside>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {posts.map((post) => (
+                  <PostCard key={post.id} post={post} />
+                ))}
               </div>
             </TabsContent>
             <TabsContent value="collaborations">
