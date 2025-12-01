@@ -29,7 +29,15 @@ export default function Home() {
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
-        <section className="relative w-full py-12 md:py-24 lg:py-32 bg-card border-b bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url(/hero-background.jpg)"}}>
+        <section className="relative w-full py-12 md:py-24 lg:py-32 bg-card border-b">
+          <Image
+            src="/hero-background.jpg"
+            alt="Kakehashi Hub background"
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint="abstract background"
+          />
           <div className="absolute inset-0 bg-black/50" />
           <div className="container relative px-4 md:px-6 text-center">
             <div className="max-w-3xl mx-auto space-y-4">
