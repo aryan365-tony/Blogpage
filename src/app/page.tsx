@@ -31,7 +31,7 @@ export default function Home() {
       <main className="flex-1">
         <section className="relative w-full py-12 md:py-24 lg:py-32 bg-card border-b">
           <Image
-            src="/images/hero-background.jpg"
+            src="/hero-background.jpg"
             alt="Kakehashi Hub background"
             fill
             className="object-cover"
