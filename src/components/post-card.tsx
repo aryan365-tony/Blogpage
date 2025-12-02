@@ -24,7 +24,7 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <Card className="flex flex-col overflow-hidden h-full transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-      <Link href="#" className="block">
+      <Link href={`/posts/${post.id}`} className="block">
         <div className="relative h-48 w-full">
           <Image
             src={post.imageUrl}
@@ -47,7 +47,7 @@ export function PostCard({ post }: PostCardProps) {
             ))}
         </div>
         <CardTitle className="font-headline text-xl leading-tight">
-          <Link href="#">{post.title}</Link>
+          <Link href={`/posts/${post.id}`}>{post.title}</Link>
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-grow">

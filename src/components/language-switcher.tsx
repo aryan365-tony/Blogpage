@@ -1,3 +1,4 @@
+"use client"
 import { Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -6,8 +7,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/contexts/language-provider";
+
 
 export function LanguageSwitcher() {
+  const { setLanguage } = useLanguage();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -17,10 +21,10 @@ export function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage("en")}>
           <span className="mr-2">🇺🇸</span> English
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage("ja")}>
           <span className="mr-2">🇯🇵</span> 日本語
         </DropdownMenuItem>
       </DropdownMenuContent>

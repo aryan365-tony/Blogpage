@@ -16,6 +16,7 @@ export type Post = {
     id: string;
     title: string;
     excerpt: string;
+    content: string;
     imageUrl: string;
     authorId: string;
     tags: string[]; // array of tag ids

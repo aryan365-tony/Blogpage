@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -23,15 +24,23 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { posts, tags, users, events } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useLanguage } from "@/contexts/language-provider";
+import { useMemo } from "react";
+
 
 export default function Home() {
+  const { language } = useLanguage();
+  const filteredPosts = useMemo(
+    () => posts.filter((p) => p.language === language),
+    [language]
+  );
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
         <section className="relative w-full py-12 md:py-24 lg:py-32 bg-card border-b">
           <Image
-            src="/hero-background.jpg"
+            src="/images/hero-background.jpg"
             alt="Kakehashi Hub background"
             fill
             className="object-cover"
@@ -53,12 +62,12 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
                 <Button asChild size="lg">
-                  <Link href="#">
+                  <Link href="/explore">
                     Start Exploring <ArrowRight className="ml-2" />
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="secondary">
-                  <Link href="#">Join the Community</Link>
+                  <Link href="/community">Join the Community</Link>
                 </Button>
               </div>
             </div>
@@ -83,7 +92,7 @@ export default function Home() {
             </TabsList>
             <TabsContent value="explore">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {posts.map((post) => (
+                {filteredPosts.map((post) => (
                   <PostCard key={post.id} post={post} />
                 ))}
               </div>
