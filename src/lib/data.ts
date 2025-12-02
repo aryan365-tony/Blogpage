@@ -61,7 +61,7 @@ There was a Shinto shrine just besides the senso-ji temple which highlights how 
 Inside Senso-ji, we observed worshippers praying, drawing omikuji (fortune slips), and offering incense. The temple grounds gave us an opportunity to experience traditional Japanese spirituality and architecture.
 
 In conclusion, today’s visits gave us a balanced experience of modern innovation and traditional culture. Miraikan showed us the scientific and technological direction Japan is heading toward, while Asakusa allowed us to connect with the country’s spiritual and historical roots. Together, these experiences enriched our understanding of Japanese society and provided valuable insights into both its past and its future.`,
-        imageUrl: '/images/post1.jpg',
+        imageUrl: '/2.jpeg',
         authorId: 'u2',
         tags: ['t3', 't5', 't1'],
         createdAt: '2024-06-01T10:00:00Z',
@@ -84,7 +84,7 @@ Surrounding the temple is a beautifully maintained Japanese strolling garden. We
 We also got a goshuin from the temple which is a very meaningful and a sacred souvenir for us which also keeps the record of our visit to the temple today.
 
 Overall, our trip to Kinkaku-ji was an enriching cultural experience that allowed us to learn about Japanese history, religion, and architecture.`,
-        imageUrl: '/images/post2.jpg',
+        imageUrl: '/1.jpeg',
         authorId: 'u2',
         tags: ['t5', 't7'],
         createdAt: '2024-06-02T14:30:00Z',
